@@ -9,7 +9,7 @@ var mongo = require('mongodb');
 var monk = require('monk');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var users = require('./routes/admin');
 
 var app = express();
 
