@@ -6,4 +6,9 @@ router.get('/', function(req, res) {
   res.render('index/index', { title: 'Home' });
 });
 
+/* POST home page. */
+router.post('/', function(req, res) {
+  res.render('index/index', { title: 'Home' });
+});
+
 module.exports = router;
