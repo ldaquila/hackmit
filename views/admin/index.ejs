@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Admin</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <form action="/positions" method="post">
+    <form action="/admin/positions" method="post">
       Positions:<br>
-      <textarea rows="10" cols="100">President:A,B;C</textarea><br>
+      <textarea rows="10" cols="100" name="positions">President:A,B;C</textarea><br>
       <input type="submit" value="Submit">
     </form> 
     <br>
