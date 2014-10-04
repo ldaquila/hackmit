@@ -9,9 +9,22 @@ var mongo = require('mongodb');
 var monk = require('monk');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var users = require('./routes/admin');
 
-var app = express();
+var app = require('express')(),
+    mailer = require('express-mailer');
+
+mailer.extend(app, {
+  from: 'no-reply@example.com',
+  host: 'smtp.gmail.com', // hostname
+  secureConnection: true, // use SSL
+  port: 465, // port for secure SMTP
+  transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
+  auth: {
+    user: 'gmail.user@gmail.com',
+    pass: 'userpass'
+  }
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,7 +43,7 @@ app.use(function(req,res,next){
     next();
 });
 
-app.use('/users', users);
+app.use('/admin', users);
 app.use('/', routes);
 
 // catch 404 and forward to error handler
