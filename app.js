@@ -11,7 +11,20 @@ var monk = require('monk');
 var routes = require('./routes/index');
 var users = require('./routes/admin');
 
-var app = express();
+var app = require('express')(),
+    mailer = require('express-mailer');
+
+mailer.extend(app, {
+  from: 'no-reply@example.com',
+  host: 'smtp.gmail.com', // hostname
+  secureConnection: true, // use SSL
+  port: 465, // port for secure SMTP
+  transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
+  auth: {
+    user: 'gmail.user@gmail.com',
+    pass: 'userpass'
+  }
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
