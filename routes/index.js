@@ -4,6 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/:id', function(req, res) {
   var voters = req.db.get('voters');
+  var ballot = req.db.get('ballot');
   voters.find({"_id": req.params.id.toString()}, function(err, docs){
   	if(docs.length == 0){
   		res.send("Page not found.");
@@ -11,7 +12,9 @@ router.get('/:id', function(req, res) {
   		res.send("Thanks for voting.");
   	}
   	else{
-  		res.render('index/index');
+  		ballot.find({}, function(e, docs){
+  			res.render('index/index', { 'ballot': docs });
+  		});
   	} 
   });
 });

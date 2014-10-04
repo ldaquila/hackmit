@@ -10,79 +10,49 @@
     <p>Welcome to the McCormick Voting Page! Please rank a 1st and 2nd choice for each position.</p>
 
     	<form name="ranking" action="" method=""> 
-		<b>Position 1</b>
-		<table border=1 rules=rows frame=hsides>
-				<col width="100">
-				<col width="110">
-				<col width="110">
-			<tr>
-			    <th></th>
-			    <th>1st Choice</th>
-			    <th>2nd Choice</th>
-			</tr>			
-			<tr>
-			    <td style="border-bottom:1px black">Chloe Orphanides</td>
-			    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="ChloeOrphanides"></td>
-			    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="ChloeOrphanides"></td>			    
-			</tr>
-			<tr>
-			    <td>Joanna So</td>
-			    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="JoannaSo"></td>
-			    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="JoannaSo"></td>				
-			</tr>
-			<tr>
-			    <td>Nalini Singh and Mary Delaney</td>
-			    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="NaliniSinghandMaryDelaney"></td>
-			    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="NaliniSinghandMaryDelaney"></td>  
-			</tr>
-			<tr>
-				<td><label>Write In:</label><input type="text"></td>
-				<td style="text-align:center"><input type="radio" name="Position1.1" data-col="WriteInValue1"></td>
-			     <td style="text-align:center"><input type="radio" name="Position1.2" data-col="WriteInValue1"></td>  
-			</tr>
-			<tr>
-				<td><label>Write In:</label><input type="text"></td>
-				<td style="text-align:center"><input type="radio" name="Position1.1" data-col="WriteInValue2"></td>
-			     <td style="text-align:center"><input type="radio" name="Position1.2" data-col="WriteInValue2"></td>  
-			</tr>
-		</table> <br><br>
 
-		<b>Position 2</b>
-		<table border=1 rules=rows frame=hsides>
-				<col width="100">
-				<col width="110">
-				<col width="110">
-			<tr>
-			    <th></th>
-			    <th>1st Choice</th>
-			    <th>2nd Choice</th>
-			</tr>			
-			<tr>
-			    <td style="border-bottom:1px black">Denise Che</td>
-			    <td style="text-align:center"><input type="radio" name="Position2.1" data-col="1"></td>
-			    <td style="text-align:center"><input type="radio" name="Position2.2" data-col="2"></td>			    
-			</tr>
-			<tr>
-			    <td>Laura D'Aquila and Caitlin Kerr</td>
-			    <td style="text-align:center"><input type="radio" name="Position2.1" data-col="1"></td>
-			    <td style="text-align:center"><input type="radio" name="Position2.2" data-col="2"></td>				
-			</tr>
-			<tr>
-			    <td>Emma Nelson</td>
-			    <td style="text-align:center"><input type="radio" name="Position2.1" data-col="1"></td>
-			    <td style="text-align:center"><input type="radio" name="Position2.2" data-col="2"></td>  
-			</tr>
-			<tr>
-				<td><label>Write In:</label><input type="text"></td>
-				<td style="text-align:center"><input type="radio" name="Position2.1" data-col="1"></td>
-			     <td style="text-align:center"><input type="radio" name="Position2.2" data-col="2"></td>  
-			</tr>
-			<tr>
-				<td><label>Write In:</label><input type="text"></td>
-				<td style="text-align:center"><input type="radio" name="Position2.1" data-col="1"></td>
-			     <td style="text-align:center"><input type="radio" name="Position2.2" data-col="2"></td>  
-			</tr>
-		</table> <br><br>
+	    	<% for(var i = 0; i < ballot.length; i++){ %>
+				<b><%= ballot[i].position %></b>
+				<table border=1 rules=rows frame=hsides>
+						<col width="100">
+						<col width="110">
+						<col width="110">
+					<tr>
+					    <th></th>
+					    <th>1st Choice</th>
+					    <th>2nd Choice</th>
+					</tr>			
+					<tr>
+					    <td style="border-bottom:1px black">Chloe Orphanides</td>
+					    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="ChloeOrphanides"></td>
+					    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="ChloeOrphanides"></td>			    
+					</tr>
+					<tr>
+					    <td>Joanna So</td>
+					    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="JoannaSo"></td>
+					    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="JoannaSo"></td>				
+					</tr>
+					<tr>
+					    <td>Nalini Singh and Mary Delaney</td>
+					    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="NaliniSinghandMaryDelaney"></td>
+					    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="NaliniSinghandMaryDelaney"></td>  
+					</tr>
+					<tr>
+						<td><label>Write In:</label><input type="text"></td>
+						<td style="text-align:center"><input type="radio" name="Position1.1" data-col="WriteInValue1"></td>
+					     <td style="text-align:center"><input type="radio" name="Position1.2" data-col="WriteInValue1"></td>  
+					</tr>
+					<tr>
+						<td><label>Write In:</label><input type="text"></td>
+						<td style="text-align:center"><input type="radio" name="Position1.1" data-col="WriteInValue2"></td>
+					     <td style="text-align:center"><input type="radio" name="Position1.2" data-col="WriteInValue2"></td>  
+					</tr>
+				</table> <br><br>
+		<%}%>
+
+
+
+
 
 		<b>JudComm</b>
 		<table border=1 rules=rows frame=hsides>
