@@ -5,11 +5,14 @@ var router = express.Router();
 router.get('/:id', function(req, res) {
   var voters = req.db.get('voters');
   voters.find({"_id": req.params.id.toString()}, function(err, docs){
-  	if(docs.length != 0 && !docs[0].voted){
-  		res.render('index/index', { title: 'Good' });
-  	} else {
-  		res.send("There was a problem");
+  	if(docs.length == 0){
+  		res.send("Page not found.");
+  	} else if(docs[0].voted) {
+  		res.send("Thanks for voting.");
   	}
+  	else{
+  		res.render('index/index');
+  	} 
   });
 });
 
@@ -19,8 +22,12 @@ router.get('/', function(req, res) {
 });
 
 /* POST home page. */
-router.post('/', function(req, res) {
-  res.render('index/index', { title: 'Home' });
+router.post('/:id', function(req, res) {
+  // Process voting
+  voters.find({"_id": req.params.id.toString()}, function(err, docs){
+  	docs[0].voted = true;
+  });
+  res.send("Thanks for voting.");
 });
 
 module.exports = router;

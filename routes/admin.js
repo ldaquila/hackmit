@@ -20,7 +20,7 @@ router.post('/positions', function(req, res, next) {
 
 router.post('/kerberos', function(req, res, next) {
 	var voters = req.db.get('voters');
-	var kerberosList = req.body.kerberos.split("\n");
+	var kerberosList = req.body.kerberos.split("\r\n");
 
 	voters.remove({});
 
