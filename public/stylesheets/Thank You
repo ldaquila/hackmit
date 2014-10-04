@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thank You</title>
+    <link rel='stylesheet' href='style.css' />
+  </head>
+  <body>
+    <h2>Thank you for voting!</h2><br><br>
+    <h3>Please check out the  <a href="http://mccormick.scripts.mit.edu/www/">McCormick Hall website</a> to what's going on in McCormick</h3><br><br>
+    <div style="text-align: center;"><img src="McCormick.jpg" alt="Mountain View" style="width:200px;height:200px;"></div>
+
+
+  </body>
+</html>
