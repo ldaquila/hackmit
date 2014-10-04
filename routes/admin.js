@@ -29,9 +29,9 @@ router.post('/kerberos', function(req, res, next) {
   		});
   	}
 
-  	/*voters.find({}, function(err, docs){
-  		console.log(docs[0]._id);
-  	});*/
+  	voters.find({}, function(err, docs){
+  		console.log(docs);
+  	});
 
   /*router.mailer.send('email', {
 	    to: 'ldaquila@mit.edu', // REQUIRED. This can be a comma delimited string just like a normal email to field. 
