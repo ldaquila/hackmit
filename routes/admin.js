@@ -27,18 +27,34 @@ router.post('/positions', function(req, res, next) {
 	});	
 })
 router.post('/kerberos', function(req, res, next) {
+	var voters = req.db.get('voters');
+	var kerberosList = req.body.kerberos.split("\r\n");
+
+	voters.remove({});
+
+	for(var i=0; i<kerberosList.length; i++) {
+  		voters.insert({"kerberos": kerberosList[i], "voted": false}, function(err, docs){
+  		});
+  	}
+
+  	voters.find({}, function(err, docs){
+  		console.log(docs);
+  	});
 
 
+  	res.redirect("/admin");
 
-
-
-	// students.insert({"name": req.body.user, "age": req.body.user_age}, function(err, docs){
-	// 	if(err){
-	// 		res.send("There was a problem");
-	// 	}else{
-	// 		res.redirect("/users");
-	// 	}
-	// });
 });
+
+/*function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 10; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}*/
 
 module.exports = router;
