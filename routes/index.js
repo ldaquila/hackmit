@@ -5,16 +5,41 @@ var router = express.Router();
 router.get('/:id', function(req, res) {
   var voters = req.db.get('voters');
   var ballot = req.db.get('ballot');
+  var positionNames = req.db.get('positionNames');
+  // Check validity of hash code
   voters.find({"_id": req.params.id.toString()}, function(err, docs){
+    // hash code is not valid
   	if(docs.length == 0){
   		res.send("Page not found.");
+    // already voted
   	} else if(docs[0].voted) {
   		res.send("Thanks for voting.");
   	}
+    // accept voting request
   	else{
-  		ballot.find({}, function(e, docs){
-  			res.render('index/index', { 'ballot': docs });
-  		});
+      var ballotList = [];
+
+      positionNames.find({}, function(e, positionNames){
+        // for each position
+        for (var i=0; i<positionNames.length; i++){
+          var position = positionNames[i].name;
+          ballot.find({"position": position}, function(e, candidateEntry){
+            // for each candidate
+            candidateList = [];
+            for (var j=0; j<candidateEntry.length; j++){
+              var position = candidateEntry[j].position;
+              var candidate = candidateEntry[j].candidate;
+              candidateList.push(candidate);
+            }
+            ballotList.push([position, candidateList]);
+            console.log(ballotList);
+
+          });
+        }
+      });
+  		// ballot.find({}, function(e, docs){
+  		// 	res.render('index/index', { 'ballot': docs });
+  		// });
   	} 
   });
 });
