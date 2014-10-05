@@ -3,13 +3,14 @@
   <head>
     <title>Test</title>
     <link rel='stylesheet' href='style.css' />
+     <script src="../javascript/javascript.js"></script> 
   </head>
   <body>
     <h1>McCormick House Government Elections Fall 2014</h1>
     
     <p>Welcome to the McCormick Voting Page! Please rank a 1st and 2nd choice for each position.</p>
 
-    	<form name="ranking" action="" method=""> 
+    	<form name="ranking" action="/hi" onsubmit="return validateForm()" method="POST"> 
 		<b>Position 1</b>
 		<table border=1 rules=rows frame=hsides>
 				<col width="100">
@@ -22,28 +23,28 @@
 			</tr>			
 			<tr>
 			    <td style="border-bottom:1px black">Chloe Orphanides</td>
-			    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="ChloeOrphanides"></td>
-			    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="ChloeOrphanides"></td>			    
+			    <td style="text-align:center"><input type="radio" name="Position1.1" id="Position1.1" value="ChloeOrphanides"></td>
+			    <td style="text-align:center"><input type="radio" name="Position1.2" id="Posiion1.2" value="ChloeOrphanides"></td>			    
 			</tr>
 			<tr>
 			    <td>Joanna So</td>
-			    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="JoannaSo"></td>
-			    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="JoannaSo"></td>				
+			    <td style="text-align:center"><input type="radio" name="Position1.1" id="Position1.1" value="JoannaSo"></td>
+			    <td style="text-align:center"><input type="radio" name="Position1.2" id="Position1.2" value="JoannaSo"></td>				
 			</tr>
 			<tr>
 			    <td>Nalini Singh and Mary Delaney</td>
-			    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="NaliniSinghandMaryDelaney"></td>
-			    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="NaliniSinghandMaryDelaney"></td>  
+			    <td style="text-align:center"><input type="radio" name="Position1.1" value="NaliniSinghandMaryDelaney"></td>
+			    <td style="text-align:center"><input type="radio" name="Position1.2" value="NaliniSinghandMaryDelaney"></td>  
 			</tr>
 			<tr>
 				<td><label>Write In:</label><input type="text"></td>
-				<td style="text-align:center"><input type="radio" name="Position1.1" data-col="WriteInValue1"></td>
-			     <td style="text-align:center"><input type="radio" name="Position1.2" data-col="WriteInValue1"></td>  
+				<td style="text-align:center"><input type="radio" name="Position1.1" value="WriteInValue1"></td>
+			     <td style="text-align:center"><input type="radio" name="Position1.2" value="WriteInValue1"></td>  
 			</tr>
 			<tr>
 				<td><label>Write In:</label><input type="text"></td>
-				<td style="text-align:center"><input type="radio" name="Position1.1" data-col="WriteInValue2"></td>
-			     <td style="text-align:center"><input type="radio" name="Position1.2" data-col="WriteInValue2"></td>  
+				<td style="text-align:center"><input type="radio" name="Position1.1" value="WriteInValue2"></td>
+			     <td style="text-align:center"><input type="radio" name="Position1.2" value="WriteInValue2"></td>  
 			</tr>
 		</table> <br><br>
 
@@ -59,28 +60,28 @@
 			</tr>			
 			<tr>
 			    <td style="border-bottom:1px black">Denise Che</td>
-			    <td style="text-align:center"><input type="radio" name="Position2.1" data-col="1"></td>
-			    <td style="text-align:center"><input type="radio" name="Position2.2" data-col="2"></td>			    
+			    <td style="text-align:center"><input type="radio" name="Position2.1" value="1"></td>
+			    <td style="text-align:center"><input type="radio" name="Position2.2" value="2"></td>			    
 			</tr>
 			<tr>
 			    <td>Laura D'Aquila and Caitlin Kerr</td>
-			    <td style="text-align:center"><input type="radio" name="Position2.1" data-col="1"></td>
-			    <td style="text-align:center"><input type="radio" name="Position2.2" data-col="2"></td>				
+			    <td style="text-align:center"><input type="radio" name="Position2.1" value="1"></td>
+			    <td style="text-align:center"><input type="radio" name="Position2.2" value="2"></td>				
 			</tr>
 			<tr>
 			    <td>Emma Nelson</td>
-			    <td style="text-align:center"><input type="radio" name="Position2.1" data-col="1"></td>
-			    <td style="text-align:center"><input type="radio" name="Position2.2" data-col="2"></td>  
+			    <td style="text-align:center"><input type="radio" name="Position2.1" value="1"></td>
+			    <td style="text-align:center"><input type="radio" name="Position2.2" value="2"></td>  
 			</tr>
 			<tr>
 				<td><label>Write In:</label><input type="text"></td>
-				<td style="text-align:center"><input type="radio" name="Position2.1" data-col="1"></td>
-			     <td style="text-align:center"><input type="radio" name="Position2.2" data-col="2"></td>  
+				<td style="text-align:center"><input type="radio" name="Position2.1" value="1"></td>
+			     <td style="text-align:center"><input type="radio" name="Position2.2" value="2"></td>  
 			</tr>
 			<tr>
 				<td><label>Write In:</label><input type="text"></td>
-				<td style="text-align:center"><input type="radio" name="Position2.1" data-col="1"></td>
-			     <td style="text-align:center"><input type="radio" name="Position2.2" data-col="2"></td>  
+				<td style="text-align:center"><input type="radio" name="Position2.1" value="1"></td>
+			     <td style="text-align:center"><input type="radio" name="Position2.2" value="2"></td>  
 			</tr>
 		</table> <br><br>
 
@@ -102,67 +103,67 @@
 			</tr>			
 			<tr>
 			    <td style="border-bottom:1px black">Denise Che</td>
-			    <td style="text-align:center"><input type="radio" name="JudComm1" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm2" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm3" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm4" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm5" data-col="DeniseChe"></td>			    
+			    <td style="text-align:center"><input type="radio" name="JudComm1" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm2" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm3" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm4" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm5" value="DeniseChe"></td>			    
 			</tr>
 			<tr>
 			    <td>Laura D'Aquila</td>
-			    <td style="text-align:center"><input type="radio" name="JudComm1" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm2" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm3" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm4" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm5" data-col="DeniseChe"></td>			
+			    <td style="text-align:center"><input type="radio" name="JudComm1" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm2" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm3" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm4" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm5" value="DeniseChe"></td>			
 			</tr>
 			<tr>
 			    <td>Emma Nelson</td>
-			    <td style="text-align:center"><input type="radio" name="JudComm1" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm2" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm3" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm4" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm5" data-col="DeniseChe"></td> 
+			    <td style="text-align:center"><input type="radio" name="JudComm1" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm2" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm3" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm4" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm5" value="DeniseChe"></td> 
 			</tr>
 			<tr>
 				<td><label>Write In:</label><input type="text"></td>
-				<td style="text-align:center"><input type="radio" name="JudComm1" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm2" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm3" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm4" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm5" data-col="DeniseChe"></td>
+				<td style="text-align:center"><input type="radio" name="JudComm1" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm2" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm3" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm4" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm5" value="DeniseChe"></td>
 			</tr>
 			<tr>
 				<td><label>Write In:</label><input type="text"></td>
-				<td style="text-align:center"><input type="radio" name="JudComm1" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm2" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm3" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm4" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm5" data-col="DeniseChe"></td>
+				<td style="text-align:center"><input type="radio" name="JudComm1" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm2" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm3" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm4" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm5" value="DeniseChe"></td>
 			</tr>
 			<tr>
 				<td><label>Write In:</label><input type="text"></td>
-				<td style="text-align:center"><input type="radio" name="JudComm1" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm2" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm3" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm4" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm5" data-col="DeniseChe"></td>
+				<td style="text-align:center"><input type="radio" name="JudComm1" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm2" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm3" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm4" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm5" value="DeniseChe"></td>
 			</tr>
 			<tr>
 				<td><label>Write In:</label><input type="text"></td>
-				<td style="text-align:center"><input type="radio" name="JudComm1" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm2" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm3" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm4" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm5" data-col="DeniseChe"></td>
+				<td style="text-align:center"><input type="radio" name="JudComm1" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm2" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm3" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm4" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm5" value="DeniseChe"></td>
 			</tr>
 			<tr>
 				<td><label>Write In:</label><input type="text"></td>
-				<td style="text-align:center"><input type="radio" name="JudComm1" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm2" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm3" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm4" data-col="DeniseChe"></td>
-			    <td style="text-align:center"><input type="radio" name="JudComm5" data-col="DeniseChe"></td>
+				<td style="text-align:center"><input type="radio" name="JudComm1" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm2" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm3" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm4" value="DeniseChe"></td>
+			    <td style="text-align:center"><input type="radio" name="JudComm5" value="DeniseChe"></td>
 			</tr>
 		</table> <br><br>
 		<input type="submit" value="Submit">
