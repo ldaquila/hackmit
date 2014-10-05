@@ -26,19 +26,19 @@
 					<% for(var j = 0; j < ballot[i][1].length; j++){ %>			
 						<tr>
 						    <td style="border-bottom:1px black"><%=ballot[i][1][j]%></td>
-						    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="ChloeOrphanides"></td>
-						    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="ChloeOrphanides"></td>	    
+						    <td style="text-align:center"><input type="radio" name="<%= ballot[i][0] %>1" value="<%=ballot[i][1][j]%>"></td>
+						    <td style="text-align:center"><input type="radio" name="<%= ballot[i][0] %>2" value="<%=ballot[i][1][j]%>"></td>	    
 						</tr>
 					<%}%>
 					<tr>
-						<td><label>Write In:</label><input type="text"></td>
-						<td style="text-align:center"><input type="radio" name="Position1.1" data-col="WriteInValue1"></td>
-					     <td style="text-align:center"><input type="radio" name="Position1.2" data-col="WriteInValue1"></td>  
+						<td><label>Write In:</label><input name="writein" type="text"></td>
+						<td style="text-align:center"><input type="radio" name="<%= ballot[i][0] %>1" value="writein"></td>
+					    <td style="text-align:center"><input type="radio" name="<%= ballot[i][0] %>2" value="writein"></td>  
 					</tr>
 					<tr>
-						<td><label>Write In:</label><input type="text"></td>
-						<td style="text-align:center"><input type="radio" name="Position1.1" data-col="WriteInValue2"></td>
-					     <td style="text-align:center"><input type="radio" name="Position1.2" data-col="WriteInValue2"></td>  
+						<td><label>Write In:</label><input name="writein" type="text"></td>
+						<td style="text-align:center"><input type="radio" name="<%= ballot[i][0] %>1" value="writein"></td>
+					    <td style="text-align:center"><input type="radio" name="<%= ballot[i][0] %>2" value="writein"></td>  
 					</tr>
 				</table> <br><br>
 		<%}%>
