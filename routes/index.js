@@ -32,14 +32,18 @@ router.get('/:id', function(req, res) {
               candidateList.push(candidate);
             }
             ballotList.push([position, candidateList]);
-            console.log(ballotList);
+            // when ballotList is fully populated
+            if (ballotList.length == positionNames.length){
+              console.log("ballotList");
+              console.log(ballotList);
+              res.render('index//index', { 'ballot': ballotList });
+            }
 
           });
+
         }
+        
       });
-  		// ballot.find({}, function(e, docs){
-  		// 	res.render('index/index', { 'ballot': docs });
-  		// });
   	} 
   });
 });
