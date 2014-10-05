@@ -1,5 +1,7 @@
 function validateForm() {
-        ballot =  [ ["President",["A and B", "C"]], ["Vice President",["D", "E"]]];
+        var ballot =  $("#ballotList").val();
+        ballot = JSON.parse(ballot); 
+
     	//var choice1 = document.getElementById('Position1.1');
     	//var choice2 = document.getElementById('Position1.2');
     	//console.log("in");
@@ -10,8 +12,11 @@ function validateForm() {
     	//console.log(choice2.length);
         
     	for(var i=0; i<ballot.length; i++){ 
-        alert($("input[name=' ballot[i][0] + 1':checked").val());
-    		if ($("input[name=" + ballot[i][0] + "1:checked").val() == $("input[name=" + ballot[i][0] + "2]:checked").val()) {
+            // alert("input[name='" + ballot[i][0] + "1']:checked");
+            // alert($("input[name='" + ballot[i][0] + "1']:checked").val());
+            // alert("input[name='" + ballot[i][0] + "2']:checked");
+            // alert($("input[name='" + ballot[i][0] + "2']:checked").val());
+    		if ($("input[name='" + ballot[i][0] + "1']:checked").val() == $("input[name='" + ballot[i][0] + "2']:checked").val()) {
     			alert(ballot[i][0] + " has been filled out incorrectly");
             	return false;
             }        	
