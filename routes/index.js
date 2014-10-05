@@ -62,19 +62,26 @@ router.get('/', function(req, res) {
 router.post('/:id', function(req, res) {
 	var positions = req.db.get('positionNames');
 	var ballot = req.db.get('ballot');
-
+	console.log(req.body);
 	for (var key in req.body) {
 		var position = key;
 		var candidate = req.body[key];
-		findAndUpdate(position, candidate, ballot);
+		console.log(position);
+		console.log(candidate);
+		if(candidate !== "writein" && position !== "writein") {
+			findAndUpdate(position, candidate, ballot);
+		} else if (candidate === "writein") {
+			addInWritein(position, req.body.writein, ballot);
+		}
+		
 	}
 
-  // Process voting
-  var voters = req.db.get('voters');
-  voters.find({"_id": req.params.id.toString()}, function(err, docs){
-  	docs[0].voted = true;
-  });
-  res.send("Thanks for voting.");
+  	// Process voting
+  	/*var voters = req.db.get('voters');
+	voters.update({"_id": req.params.id.toString()},
+		{$set:{"voted":true}}, function(err,result){
+	});*/
+  	res.send("Thanks for voting.");
 });
 
 function findAndUpdate(position, candidate, ballot) {
@@ -99,6 +106,19 @@ function findAndUpdate(position, candidate, ballot) {
 		}
 
 	});
+}
+
+function addInWritein(position, candidate, ballot) {
+	var pos = position.substring(0, position.length - 1);
+	var ranking = position.substring(position.length-1);
+
+	if (ranking == 1) {
+		candidate = candidate[0];
+		ballot.insert({"position": position, "candidate": candidate, "vote1": 1, "vote2":0}, function(err, entry){});
+	} else {
+		candidate = candidate[1];
+		ballot.insert({"position": position, "candidate": candidate, "vote1": 0, "vote2":1}, function(err, entry){});
+	}
 }
 
 module.exports = router;
