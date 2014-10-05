@@ -11,7 +11,7 @@
     
     <p>Welcome to the McCormick Voting Page! Please rank a 1st and 2nd choice for each position.</p>
 
-    	<form name="ranking" action="" method="" onsubmit="return validateForm()"> 
+    	<form name="ranking" action="" method="POST" onsubmit="return validateForm()"> 
     		<input id="ballotList" type="hidden" value= "<%= JSON.stringify(ballot) %>">
 	    	<% for(var i = 0; i < ballot.length; i++){ %>
 				<b><%= ballot[i][0] %></b>
