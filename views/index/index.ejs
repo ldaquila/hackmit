@@ -12,7 +12,7 @@
     	<form name="ranking" action="" method=""> 
 
 	    	<% for(var i = 0; i < ballot.length; i++){ %>
-				<b><%= ballot[i].position %></b>
+				<b><%= ballot[i][0] %></b>
 				<table border=1 rules=rows frame=hsides>
 						<col width="100">
 						<col width="110">
@@ -21,22 +21,14 @@
 					    <th></th>
 					    <th>1st Choice</th>
 					    <th>2nd Choice</th>
-					</tr>			
-					<tr>
-					    <td style="border-bottom:1px black">Chloe Orphanides</td>
-					    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="ChloeOrphanides"></td>
-					    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="ChloeOrphanides"></td>			    
 					</tr>
-					<tr>
-					    <td>Joanna So</td>
-					    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="JoannaSo"></td>
-					    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="JoannaSo"></td>				
-					</tr>
-					<tr>
-					    <td>Nalini Singh and Mary Delaney</td>
-					    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="NaliniSinghandMaryDelaney"></td>
-					    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="NaliniSinghandMaryDelaney"></td>  
-					</tr>
+					<% for(var j = 0; j < ballot[i][1].length; j++){ %>			
+						<tr>
+						    <td style="border-bottom:1px black"><%=ballot[i][1][j]%></td>
+						    <td style="text-align:center"><input type="radio" name="Position1.1" data-col="ChloeOrphanides"></td>
+						    <td style="text-align:center"><input type="radio" name="Position1.2" data-col="ChloeOrphanides"></td>	    
+						</tr>
+					<%}%>
 					<tr>
 						<td><label>Write In:</label><input type="text"></td>
 						<td style="text-align:center"><input type="radio" name="Position1.1" data-col="WriteInValue1"></td>
