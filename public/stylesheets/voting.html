@@ -4,13 +4,14 @@
     <title>Test</title>
     <link rel='stylesheet' href='style.css' />
      <script src="../javascript/javascript.js"></script> 
+     <script src="../javascript/jquery-1.9.0.min.js"></script> 
   </head>
   <body>
     <h1>McCormick House Government Elections Fall 2014</h1>
     
     <p>Welcome to the McCormick Voting Page! Please rank a 1st and 2nd choice for each position.</p>
 
-    	<form name="ranking" action="/hi" onsubmit="return validateForm()" method="POST"> 
+    	<form name="ranking" action="" onsubmit="return validateForm()" method="GET"> 
 		<b>Position 1</b>
 		<table border=1 rules=rows frame=hsides>
 				<col width="100">
@@ -23,13 +24,13 @@
 			</tr>			
 			<tr>
 			    <td style="border-bottom:1px black">Chloe Orphanides</td>
-			    <td style="text-align:center"><input type="radio" name="Position1.1" id="Position1.1" value="ChloeOrphanides"></td>
-			    <td style="text-align:center"><input type="radio" name="Position1.2" id="Posiion1.2" value="ChloeOrphanides"></td>			    
+			    <td style="text-align:center"><input type="radio" name="Position1.1" value="ChloeOrphanides"></td>
+			    <td style="text-align:center"><input type="radio" name="Position1.2" value="ChloeOrphanides"></td>			    
 			</tr>
 			<tr>
 			    <td>Joanna So</td>
-			    <td style="text-align:center"><input type="radio" name="Position1.1" id="Position1.1" value="JoannaSo"></td>
-			    <td style="text-align:center"><input type="radio" name="Position1.2" id="Position1.2" value="JoannaSo"></td>				
+			    <td style="text-align:center"><input type="radio" name="Position1.1" value="JoannaSo"></td>
+			    <td style="text-align:center"><input type="radio" name="Position1.2" value="JoannaSo"></td>				
 			</tr>
 			<tr>
 			    <td>Nalini Singh and Mary Delaney</td>
