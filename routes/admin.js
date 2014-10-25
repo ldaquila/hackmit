@@ -3,7 +3,19 @@ var router = express.Router();
 var os = require('os');
 
 router.get('/', function(req, res) {
+	var voters = req.db.get('voters');
+	voters.find({}, function(err, docs){
+		console.log(docs);
+	});
 	res.render('admin/index', {});
+});
+
+router.get('/results', function(req, res) {
+	var ballot = req.db.get('ballot');
+	ballot.find({}, function(err, docs){
+		console.log(docs);
+		res.render('admin/results', {'results': docs});
+	});
 });
 
 

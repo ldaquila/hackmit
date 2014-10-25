@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <table class="results" style="width:100%">
+      <tr>
+        <th class="results">Position</th>
+        <th class="results">Candidate</th> 
+        <th class="results">Votes1</th>
+        <th class="results">Votes2</th>
+        <th class="results">Total</th>
+      </tr>
+      <% for(var i = 0; i < results.length; i++){ %>
+      <tr>
+        <td class="results"><%= results[i].position%></td>
+        <td class="results"><%= results[i].candidate%></td> 
+        <td class="results"><%= results[i].vote1%></td>
+        <td class="results"><%= results[i].vote2%></td>
+        <td class="results"><%= results[i].vote1*2 + results[i].vote2 %></td>
+      </tr>
+      <%}%> 
+    </table>  
+  </body>
+</html>
